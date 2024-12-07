@@ -1,6 +1,5 @@
-package com.wunnakyaw.basicstatecodelab
+package com.wunnakyaw.basicstateincompose
 
-import WaterCounter
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
