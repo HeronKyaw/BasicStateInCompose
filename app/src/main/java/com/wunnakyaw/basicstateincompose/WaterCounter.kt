@@ -16,18 +16,13 @@ import com.wunnakyaw.basicstateincompose.ui.theme.BasicStateInComposeTheme
 
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
-    Column (
-        modifier = modifier.padding(16.dp)
-    ) {
+    Column(modifier = modifier.padding(16.dp)) {
         var count by remember { mutableIntStateOf(0) }
-        Text(
-            text = "You've had $count glasses.",
-        )
-        Button(
-            onClick = { count++ },
-            modifier = modifier.padding(8.dp)
-        ) {
-            Text("Add One")
+        if (count > 0) {
+            Text("You've had $count glasses.")
+        }
+        Button(onClick = { count++ }, Modifier.padding(top = 8.dp), enabled = count < 10) {
+            Text("Add one")
         }
     }
 }
