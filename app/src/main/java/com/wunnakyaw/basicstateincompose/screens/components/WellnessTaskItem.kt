@@ -1,4 +1,4 @@
-package com.wunnakyaw.basicstateincompose
+package com.wunnakyaw.basicstateincompose.screens.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Icon

@@ -1,4 +1,4 @@
-package com.wunnakyaw.basicstateincompose
+package com.wunnakyaw.basicstateincompose.screens.water_counter
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
