@@ -14,6 +14,7 @@ fun WellnessTasksList(
 ) {
     WellnessTasksList(
         list = viewModel.tasks,
+        onCheckedTask = { task, checked -> viewModel.changeTaskChecked(task, checked) },
         onCloseTask = { viewModel.remove(it) },
         modifier = modifier
     )
@@ -23,6 +24,7 @@ fun WellnessTasksList(
 fun WellnessTasksList(
     list: List<WellnessTask>,
     onCloseTask: (WellnessTask) -> Unit,
+    onCheckedTask: (WellnessTask, Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier) {
@@ -30,7 +32,12 @@ fun WellnessTasksList(
             items = list,
             key = { task -> task.id }
         ) { task ->
-            WellnessTaskItem(taskName = task.label, onClose = { onCloseTask(task) })
+            WellnessTaskItem(
+                taskName = task.label,
+                onClose = { onCloseTask(task) },
+                checked = task.checked,
+                onCheckedChange = { onCheckedTask(task, it) }
+            )
         }
     }
 }
